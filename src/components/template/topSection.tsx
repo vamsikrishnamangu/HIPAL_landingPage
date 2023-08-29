@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../atoms/logo/logo";
 import Image from "next/image";
 import {
@@ -7,208 +7,107 @@ import {
   AiFillLinkedin,
 } from "react-icons/ai";
 import { RiGoogleFill } from "react-icons/ri";
+import MiddleSection from "../atoms/middleSection/MiddleSection";
+import CardSection from "../atoms/cardSection/CardSection";
+import BusinessThrive from "../atoms/businessThrive/BusinessThrive";
+import FadeEffect from "../atoms/FadeEffect/FadeEffect";
 const TopSection = () => {
+  const [index, setIndex] = useState(0);
+  const texts = [
+    "Restaurant Management System",
+    "Waiter Management System",
+    "Kitchen Management System",
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % texts.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
-    <>
-      <div className="mx-8 py-[2rem]">
+    <div className="">
+      <div className="">
         <Logo />
       </div>
-      <div className="flex flex-col items-center">
-        <h1 className="text-[#131540] text-base font-semibold">A Complete</h1>
-        <div className="my-6">
-          <span className="text-[#F2634C] font-bold">
-            Restaurant Management System
-          </span>
-        </div>
-        <p className="text-center text-base text-[#131540] opacity-50 mx-8 flex flex-col justify-center items-center">
-          The only 360 degree Management solution you need to manage and grow
-          your business
-        </p>
-        <div className="rounded-3xl my-10 px-[5.625rem] py-2 bg-[#F2634C] flex flex-row justify-center items-center">
-          <button className="text-white font-semibold">Get started</button>
-          <div>
-            <Image
-              src="/right_arrow.png"
-              alt="rightArrow"
-              height={20}
-              width={20}
-            />
+      <div className="lg:mb-[2.75rem] lg:ml-[5.75rem] flex flex-col lg:flex-row lg:justify-between">
+        <div className="flex lg:my-[4rem] flex-col justify-between items-center lg:justify-center lg:items-start">
+          <h1 className="text-[#131540] text-base font-semibold lg:text-[3rem]">
+            A Complete
+          </h1>
+          <div className="flex justify-center my-6 lg:mb-[2rem] relative h-8 lg-h-0 lg:text-[4rem]">
+            <FadeEffect />
+          </div>
+          <div className="lg:mt-[4rem]">
+            <p className="text-center lg:leading-[3rem] lg:text-left text-base lg:text-[2.5rem] text-[#131540] opacity-50 mx-8 lg:mx-0 flex flex-col justify-center items-center">
+              The only 360 degree Management solution you need to manage and
+              grow your business
+            </p>
+          </div>
+          <div className="lg:h-[5.5rem] lg:w-[18.75rem] rounded-3xl my-10 px-[5.625rem] lg:px-0 py-2 bg-[#F2634C] flex flex-row justify-center items-center">
+            <div className="">
+              <button className="text-white font-semibold lg:text-2xl">
+                Get started
+              </button>
+            </div>
+            <div className="lg:hidden">
+              <Image
+                src="/right_arrow.png"
+                alt="rightArrow"
+                height={20}
+                width={20}
+              />
+            </div>
+            <div className="hidden lg:mx-2 lg:inline-flex">
+              <Image
+                src="/arrow_line.svg"
+                alt="arrow_line"
+                height={20}
+                width={20}
+              />
+            </div>
           </div>
         </div>
         <div
-          className="flex justify-center"
+          className="flex justify-center lg:hidden"
           style={{
             backgroundImage: "url(hand.svg)",
             backgroundSize: "cover",
             width: "100%",
           }}
         >
-          <Image src="/iphone.png" alt="iphone" height={627} width={360} />
-        </div>
-      </div>
-      <div className="mx-8 flex items-center text-black text-2xl font-bold">
-        <span>Trusted by</span>
-        <div className="mx-2">
-          <Image src="/tick.png" alt="tick" height={24} width={24} />
-        </div>
-      </div>
-      <span className="mx-8 text-black text-2xl font-bold">
-        Top rated restaurants
-      </span>
-      <div className="my-10" style={{ width: "300px", height: "76px" }}></div>
-      <div className="mx-8 flex items-center justify-center">
-        <span className="text-2xl font-bold">
-          Managing your business has never been so
-          <span className="inline-flex items-center mx-2 text-center">
-            cool
-            <Image
-              src="/glasses.png"
-              alt="glasses"
-              height={10}
-              width={20}
-              className="mx-2"
-            />
-          </span>
-        </span>
-      </div>
-
-      <div className="my-7">
-        <h1 className="text-sm mx-8 font-bold text-[#F2634C]">
-          Here&apos;s what all you get:
-        </h1>
-      </div>
-      <div className="ml-8 flex flex-row flex-nowrap overflow-x-auto w-[20rem] items-center">
-        <div className="h-[25rem] w-[10rem] px-4 bg-[#E7EEEA] flex flex-col items-center rounded-xl">
-          <div className="flex self-start my-4">
-            <Image
-              src="/hikitchen.svg"
-              alt="hikitchen"
-              height={16.5}
-              width={67.3}
-            />
-          </div>
-          <div>
-            <Image
-              src="/hikitchen_dish.png"
-              alt="hikitchen"
-              height={103}
-              width={136}
-            />
-          </div>
-          <div className="mt-3 mb-3 ml-3 mr-[0.125rem]">
-            <p className="text-[#131540] text-base font-normal opacity-50">
-              The only 360 degree management solution you need to manage and
-              grow your business.
-            </p>
-          </div>
-          <div className="mx-4 mb-3 flex self-start">
-            <button className="bg-[#455F50] rounded-2xl p-1">
-              <Image
-                src="/right_arrow.png"
-                alt="right_arrow"
-                height={20}
-                width={20}
-              />
-            </button>
-          </div>
-        </div>
-        <div className="h-[25rem] w-[10rem] px-4 mx-2 bg-[#E7EDFD] flex flex-col items-center rounded-xl">
-          <div className="flex self-start my-4">
-            <Image
-              src="/hitable.svg"
-              alt="hitable"
-              height={16.5}
-              width={67.3}
-            />
-          </div>
-          <div>
-            <Image
-              src="/hitable_dish.png"
-              alt="hitable"
-              height={103}
-              width={136}
-            />
-          </div>
-          <div className="mt-3 mb-3 ml-3 mr-[0.125rem]">
-            <p className="text-[#131540] text-base font-normal opacity-50">
-              The only 360 degree management solution you need to manage and
-              grow your business.
-            </p>
-          </div>
-          <div className="mx-4 mb-3 flex self-start">
-            <button className="bg-[#2C62F0] rounded-2xl p-1">
-              <Image
-                src="/right_arrow.png"
-                alt="right_arrow"
-                height={20}
-                width={20}
-              />
-            </button>
-          </div>
-        </div>
-        <div className="h-[25rem] w-[10rem] px-4 bg-[#D6F2FF] flex flex-col items-center rounded-xl">
-          <div className="flex self-start my-4">
-            <Image
-              src="/hipeople.svg"
-              alt="hipeople"
-              height={16.5}
-              width={67.3}
-            />
-          </div>
-          <div>
-            <Image
-              src="/hipeople_dish.png"
-              alt="hipeople"
-              height={103}
-              width={136}
-            />
-          </div>
-          <div className="mt-3 mb-3 ml-3 mr-[0.125rem]">
-            <p className="text-[#131540] text-base font-normal opacity-50">
-              The only 360 degree management solution you need to manage and
-              grow your business.
-            </p>
-          </div>
-          <div className="mx-4 mb-3 flex self-start">
-            <button className="bg-[#006494] rounded-2xl p-1">
-              <Image
-                src="/right_arrow.png"
-                alt="right_arrow"
-                height={20}
-                width={20}
-              />
-            </button>
-          </div>
-        </div>
-      </div>
-      <div className="rounded-3xl mx-4 my-10 px-[3.25rem] py-2 bg-[#F2634C] flex flex-row justify-center items-center">
-        <button className="text-white font-semibold">
-          Get full managment suite
-        </button>
-        <div>
           <Image
-            src="/right_arrow.png"
-            alt="rightArrow"
-            height={20}
-            width={20}
+            src="/iphone.svg"
+            alt="iphone"
+            height={627}
+            width={360}
+            className="mt-[1.2rem]"
+            style={{ width: "100%" }}
+          />
+        </div>
+        <div
+          className="hidden lg:flex lg:justify-center lg:ml-[4rem]"
+          style={{
+            backgroundImage: "url(tilted_hand_lg.png)",
+            backgroundSize: "cover",
+            backgroundPosition: "left",
+            width: "100%",
+          }}
+        >
+          <Image
+            src="/iphone_lg.svg"
+            alt="iphone"
+            height={832}
+            width={571}
+            className="mt-[2rem]"
           />
         </div>
       </div>
-      <div
-        style={{
-          backgroundImage: "url(business_thrive.png)",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          width: "100%",
-          height: "350px",
-          background: `url(business_thrive.png), lightgray -126.218px 0px / 146.232% 100.286% no-repeat`,
-        }}
-      >
-        <h1 className="text-2xl mx-8 font-bold text-[#201C44]">
-          Let your business thrive with us...
-        </h1>
-      </div>
-      <div className="flex justify-center items-center mb-11 overflow-hidden bg-gradient-to-r from-purple-300 via-green-300 to-red-300 h-24">
+      <MiddleSection />
+      <CardSection />
+      <BusinessThrive />
+      <div className="flex justify-center items-center mb-11 overflow-hidden bg-gradient-to-r from-purple-300 via-green-300 to-red-300 h-24 lg:h-16">
         <div className="flex marquee" style={{ display: "flex" }}>
           <div className="flex items-center mx-4">
             <p className="text-base font-bold">START YOUR FREE TRIAL</p>
@@ -220,8 +119,7 @@ const TopSection = () => {
           </div>
         </div>
       </div>
-
-      <div className="mx-8 my-4">
+      <div className="lg:hidden mx-8 my-4">
         <h1 className="text-2xl my-4">Hipal.life</h1>
         <p className="text-base text-[#131540] opacity-50">
           Digital menu, Content management system, POS, Customize themes.
@@ -239,8 +137,8 @@ const TopSection = () => {
           </div>
         </div>
       </div>
-      <div className="h-1 mx-8 bg-[#D9D9D9] my-4"></div>
-      <div className="mx-8">
+      <div className="lg:hidden h-1 mx-8 bg-[#D9D9D9] my-4"></div>
+      <div className="lg:hidden mx-8">
         <div className="my-4">
           <Image src="pro_hipal.svg" alt="pro_hipal" height={30} width={110} />
         </div>
@@ -264,68 +162,106 @@ const TopSection = () => {
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-row items-center mr-4 border-b-1 border-b-black">
+      <div className="w-full flex flex-row justify-between items-center">
         <div
-          className="rounded-full"
+          className="rounded-full lg:mr-[15.8rem]"
           style={{
             background:
               "linear-gradient(180deg, #F2634C 0%, rgba(242, 99, 76, 0.00) 78.47%)",
           }}
         >
           <Image
-            src="/CEO.png"
+            src="/CEO.svg"
             alt="CEO"
-            className="mx-4"
+            className="mx-4 lg:hidden"
             height={254}
             width={216}
           />
+          <Image
+            src="/CEO.svg"
+            alt="CEO"
+            className="mx-4 hidden lg:inline-flex"
+            height={641}
+            width={546}
+          />
         </div>
-        <div className="flex flex-col justify-end items-end w-1/2">
-          <p className="text-base font-bold my-3">PAL SUPPORT</p>
-          <p className="text-[#131540] opacity-50">
+        <div className="flex flex-col lg:items-start items-end mr-4">
+          <p className="text-base lg:text-3xl font-bold my-2 flex justify-end">
+            PAL SUPPORT
+          </p>
+          <p className="text-[#131540] lg:text-2xl opacity-50 text-base w-20 lg:w-full">
             The help you need, when you need it.
           </p>
-          <div className="my-4">
+          <div className="my-4 lg:my-[4rem]">
             <button className="border border-1 border-black px-4 py-2 rounded-3xl">
               Contact us
             </button>
           </div>
         </div>
+        <div className="hidden lg:flex lg:justify-self-end lg:self-end">
+          <Image
+            src="hand_bottom_lg.svg"
+            alt="hand_bottom_lg"
+            height={585}
+            width={275}
+          />
+        </div>
       </div>
       <div className="h-1 bg-[#121212] mb-4"></div>
-      <div>
-        <div className="my-10 flex justify-center">
-          <Image src="/Hipal_logo.svg" alt="hipal" height={36} width={108} />
+      <div className="lg:grid lg:grid-cols-2 lg:place-items-start lg:gap-y-5 lg:items-center lg:mx-[5.75rem]">
+        <div className="order-0 my-10 lg:my-5 flex justify-center">
+          <Image
+            src="/Hipal_logo.svg"
+            alt="hipal"
+            height={36}
+            width={108}
+            className="lg:hidden"
+          />
+          <Image
+            src="/Hipal_logo.svg"
+            alt="hipal"
+            height={84}
+            width={234}
+            className="hidden lg:inline-flex"
+          />
         </div>
-      </div>
-      <div className="flex justify-around">
-        <div>
-          <AiFillFacebook size={24} />
+        <div className="flex justify-around lg:justify-center my-10 lg:my-5 lg:place-self-end">
+          <div className="lg:mx-4">
+            <AiFillFacebook size={24} />
+          </div>
+          <div className="lg:mx-4">
+            <Image src="/twitter.svg" alt="twitter" height={24} width={24} />
+          </div>
+          <div className="lg:mx-4">
+            <AiOutlineInstagram size={24} />
+          </div>
+          <div className="lg:mx-4">
+            <AiFillLinkedin size={24} />
+          </div>
+          <div className="lg:mx-4">
+            <RiGoogleFill size={24} />
+          </div>
         </div>
-        <div>
-          <Image src="/twitter.svg" alt="twitter" height={24} width={24} />
+        <div className="lg:hidden order-0 flex flex-col lg:flex-row items-center lg:my-0 my-10 mx-8 mb-8 lg:mx-0 lg:place-self-end">
+          <p className="my-4">
+            ©2001-2023 All Rights Reserved. Hipal® is a registered trademark of
+            Paltribe solutions.
+          </p>
         </div>
-        <div>
-          <AiOutlineInstagram size={24} />
+        <div className="order-0 flex flex-col items-center">
+          <p className="underline decoration-black lg:text-2xl">
+            Privacy | Terms | Legal | Cookie Preferences
+          </p>
         </div>
-        <div>
-          <AiFillLinkedin size={24} />
+        <div className="hidden lg:inline-flex order-0 lg:flex-row items-center my-10 lg:my-0 mx-8 mb-8 lg:mx-0 lg:place-self-end">
+          <p className="my-4 lg:flex lg:items-center lg:text-right">
+            ©2001-2023 All Rights Reserved. Hipal® is a registered trademark of
+            Paltribe solutions.
+          </p>
         </div>
-        <div>
-          <RiGoogleFill size={24} />
-        </div>
-      </div>
-      <div className="flex flex-col items-center my-10 mx-8 mb-8">
-        <p className="my-4">
-          ©2001-2023 All Rights Reserved. Hipal® is a registered trademark of
-          Paltribe solutions.
-        </p>
-        <p className="underline decoration-black">
-          Privacy | Terms | Legal | Cookie Preferences
-        </p>
         <br />
       </div>
-    </>
+    </div>
   );
 };
 

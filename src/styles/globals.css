@@ -7,6 +7,13 @@
 body {
   background-color: #fef7f5;
   height: 100vh;
+  font-family: Plus Jakarta Sans, sans-serif;
+  line-height: normal;
+}
+
+/* Or create a specific class to use the font */
+.plus-jakarta-font {
+  font-family: Plus Jakarta Sans, sans-serif;
 }
 
 @keyframes marquee {
