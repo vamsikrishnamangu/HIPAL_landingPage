@@ -3,7 +3,7 @@ import React from "react";
 
 const Logo = () => {
   return (
-    <div className="mx-8 lg:ml-[5.75rem] py-[2rem] lg:py-[2.75rem]">
+    <div className="mx-8 lg:mx-[5.75rem] py-[2rem] lg:py-[2.75rem]">
       <div className="block lg:hidden">
         <Image src="/Hipal_logo.svg" alt="logo" height={24} width={69} />
       </div>

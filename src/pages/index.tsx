@@ -1,9 +1,9 @@
-import TopSection from "@/components/template/topSection";
+import LandingPage from "@/components/template/LandingPage";
 
 export default function Home() {
   return (
     <div>
-      <TopSection />
+      <LandingPage />
     </div>
   );
 }

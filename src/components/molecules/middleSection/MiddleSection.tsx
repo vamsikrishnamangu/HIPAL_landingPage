@@ -4,7 +4,7 @@ import React from "react";
 const MiddleSection = () => {
   return (
     <>
-      <div className="lg:text-[3rem] mx-8 lg:mx-[5.75rem] flex items-center text-black text-2xl font-bold">
+      <div className="lg:text-[3rem] mx-8 lg:mx-[5.75rem] mt-[2rem] flex items-center text-black text-2xl font-bold">
         <span>Trusted by</span>
         <div className="mx-2 lg:hidden">
           <Image src="/tick.png" alt="tick" height={24} width={24} />

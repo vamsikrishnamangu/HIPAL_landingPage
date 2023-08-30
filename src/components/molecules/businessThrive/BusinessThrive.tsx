@@ -15,7 +15,7 @@ const BusinessThrive = () => {
           background: `url(business_thrive.png), lightgray -126.218px 0px / 146.232% 100.286% no-repeat`,
         }}
       >
-        <h1 className="text-2xl mx-8 font-bold text-[#201C44]">
+        <h1 className="text-2xl mx-8 pt-[1rem] font-bold text-[#201C44]">
           Let your business thrive with us...
         </h1>
       </div>
@@ -27,7 +27,7 @@ const BusinessThrive = () => {
           width={864}
           className="lg:mr-[3.9rem]"
         />
-        <div className="lg:mt-[2rem]">
+        <div className="lg:pt-[2rem] lg:mr-[5.75rem]">
           <h1 className="text-2xl font-bold text-[#201C44]">
             Let your business thrive with us...
           </h1>
@@ -44,12 +44,12 @@ const BusinessThrive = () => {
                   alt="arrow_line"
                   height={18}
                   width={18}
-                  className="p-1  bg-[#F2634C] rounded-2xl"
+                  className="p-1 bg-[#F2634C] rounded-2xl"
                 />
               </div>
             </div>
           </div>
-          <div className="h-1  bg-[#D9D9D9] my-4"></div>
+          <div className="h-1 bg-[#D9D9D9] my-4"></div>
           <div className="">
             <div className="my-4">
               <Image
@@ -66,15 +66,11 @@ const BusinessThrive = () => {
               <p className="text-2xl">Check it out </p>
               <div className="mx-2">
                 <Image
-                  style={{
-                    background:
-                      "linear-gradient(to bottom right, #F2B54C 8%, #E0563C 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #F2B54C 8%, #E0563C 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #F2B54C 8%, #E0563C 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, #F2B54C 8%, #E0563C 50%) top right / 50% 50% no-repeat",
-                  }}
                   src="/arrow_line.svg"
                   alt="arrow_line"
                   height={18}
                   width={18}
-                  className="p-1 rounded-2xl"
+                  className="p-1 bg-[#F2634C] rounded-2xl"
                 />
               </div>
             </div>

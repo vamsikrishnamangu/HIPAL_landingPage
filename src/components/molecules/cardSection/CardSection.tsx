@@ -3,8 +3,8 @@ import React from "react";
 
 const CardSection = () => {
   return (
-    <>
-      <div className="lg:flex lg:items-center lg:justify-center lg:mb-[11.313rem]">
+    <div className="lg:mb-[11.313rem]">
+      <div className="lg:flex lg:items-center">
         <div className="ml-8 lg:mx-[5.75rem] lg:mt-[6.25rem] flex flex-row flex-nowrap overflow-x-auto w-[20rem] lg:w-[100rem] items-center">
           <div className="h-[25rem] w-[10rem] lg:h-[24.057rem] lg:w-[24.842rem] px-4 bg-[#E7EEEA] flex flex-col items-center lg:justify-between rounded-xl">
             <div className="flex self-start my-4">
@@ -45,7 +45,7 @@ const CardSection = () => {
                 grow your business.
               </p>
             </div>
-            <div className="mx-4 mb-3 flex self-start">
+            <div className="mb-3 flex self-start">
               <button className="bg-[#455F50] rounded-2xl p-1">
                 <Image
                   src="/right_arrow.png"
@@ -95,7 +95,7 @@ const CardSection = () => {
                 grow your business.
               </p>
             </div>
-            <div className="mx-4 mb-3 flex self-start">
+            <div className="mb-3 flex self-start">
               <button className="bg-[#2C62F0] rounded-2xl p-1">
                 <Image
                   src="/right_arrow.png"
@@ -145,7 +145,7 @@ const CardSection = () => {
                 grow your business.
               </p>
             </div>
-            <div className="mx-4 mb-3 flex self-start">
+            <div className="mb-3 flex self-start">
               <button className="bg-[#006494] rounded-2xl p-1">
                 <Image
                   src="/right_arrow.png"
@@ -157,21 +157,21 @@ const CardSection = () => {
             </div>
           </div>
         </div>
-        <div className="lg:w-[22.18rem] lg:h-[9rem] rounded-3xl mx-4 my-10 px-[3.25rem] py-2 bg-[#F2634C] flex flex-row justify-center items-center">
-          <button className="text-white font-semibold">
-            Get full managment suite
-          </button>
-          <div>
-            <Image
-              src="/right_arrow.png"
-              alt="rightArrow"
-              height={20}
-              width={20}
-            />
-          </div>
+      </div>
+      <div className="lg:mx-[5.75rem] lg:w-[22.18rem] lg:mr-[5.75rem] lg:h-[5rem] rounded-3xl mx-4 my-10 px-[3.25rem] py-2 bg-[#F2634C] flex flex-row justify-center items-center">
+        <button className="text-white font-semibold">
+          Get full managment suite
+        </button>
+        <div>
+          <Image
+            src="/right_arrow.png"
+            alt="rightArrow"
+            height={20}
+            width={20}
+          />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
